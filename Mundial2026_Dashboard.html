@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mundial 2026 Pronosticos</title><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"><style>:root{--v:#00c853;--r:#ff3d3d;--y:#ffd600;--bg:#0a0f0d;--card:#111815;--b:#1e2b25;--t:#e8f0eb;--m:#5a7060}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t);font-family:"DM Sans",sans-serif;min-height:100vh;overflow-x:hidden}
+header{position:relative;padding:60px 40px 40px;overflow:hidden;border-bottom:1px solid var(--b)}
+header::before{content:"2026";position:absolute;font-family:"Bebas Neue",sans-serif;font-size:280px;color:rgba(0,200,83,.04);right:-20px;top:-40px;line-height:1;pointer-events:none}
+.hi{max-width:1100px;margin:0 auto}
+.badge{display:inline-block;background:var(--v);color:#000;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:16px}
+h1{font-family:"Bebas Neue",sans-serif;font-size:clamp(48px,8vw,96px);line-height:.9;letter-spacing:2px;color:#fff}
+h1 span{color:var(--v)}.sub{margin-top:16px;color:var(--m);font-size:14px;letter-spacing:1px}
+.tabs{max-width:1100px;margin:32px auto 0;padding:0 40px;display:flex;gap:4px;flex-wrap:wrap}
+.tab{background:none;border:1px solid var(--b);color:var(--m);font-family:"DM Sans",sans-serif;font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:10px 24px;cursor:pointer;transition:all .2s;border-radius:2px}
+.tab:hover{color:var(--t);border-color:var(--m)}.tab.active{background:var(--v);color:#000;border-color:var(--v);font-weight:700}
+main{max-width:1100px;margin:0 auto;padding:40px 40px 80px}
+.panel{display:none}.panel.active{display:block;animation:fi .3s ease}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.ranking-grid{display:flex;flex-direction:column;gap:12px}
+.rank-card{display:grid;grid-template-columns:48px 1fr auto;align-items:center;gap:20px;background:var(--card);border:1px solid var(--b);border-radius:4px;padding:20px 24px;transition:border-color .2s,transform .2s}
+.rank-card:hover{border-color:var(--v);transform:translateX(4px)}
+.rank-card.gold{border-left:3px solid var(--y)}.rank-card.silver{border-left:3px solid #aaa}.rank-card.bronze{border-left:3px solid #cd7f32}
+.rank-pos{font-family:"Bebas Neue",sans-serif;font-size:36px;color:var(--m);line-height:1}
+.rank-card.gold .rank-pos{color:var(--y)}.rank-card.silver .rank-pos{color:#ccc}.rank-card.bronze .rank-pos{color:#cd7f32}
+.rank-name{font-size:18px;font-weight:700}
+.rank-bar-wrap{width:100%;height:4px;background:var(--b);border-radius:2px;margin-top:8px;overflow:hidden}
+.rank-bar{height:100%;background:var(--v);border-radius:2px;transition:width 1s cubic-bezier(.4,0,.2,1);width:0}
+.rank-stat{text-align:right}.rank-aciertos{font-family:"Bebas Neue",sans-serif;font-size:40px;line-height:1;color:var(--v)}
+.rank-pct{font-size:12px;color:var(--m);margin-top:2px}.rank-partidos{font-size:11px;color:var(--m);margin-top:4px}
+.fecha-section{margin-bottom:40px}
+.fecha-label{font-family:"Bebas Neue",sans-serif;font-size:28px;letter-spacing:3px;color:var(--m);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.fecha-label::after{content:"";flex:1;height:1px;background:var(--b)}
+.partido-card{background:var(--card);border:1px solid var(--b);border-radius:4px;margin-bottom:12px;overflow:hidden}
+.partido-header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:20px 24px;gap:16px;cursor:pointer;transition:background .15s}
+.partido-header:hover{background:rgba(255,255,255,.02)}
+.team{font-size:16px;font-weight:700}.team.right{text-align:right}.vs-box{text-align:center}
+.vs-resultado{font-family:"Bebas Neue",sans-serif;font-size:13px;letter-spacing:2px;padding:6px 14px;border-radius:2px;background:var(--b);color:var(--m);white-space:nowrap}
+.vs-resultado.real{background:rgba(0,200,83,.15);color:var(--v);border:1px solid rgba(0,200,83,.3)}
+.vs-resultado.simulado{background:rgba(255,214,0,.1);color:var(--y);border:1px solid rgba(255,214,0,.2)}
+.partido-toggle{font-size:11px;color:var(--m);text-align:center;padding:4px 24px 10px;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+.pronosticos{display:none;border-top:1px solid var(--b);padding:16px 24px;gap:8px;flex-wrap:wrap}
+.pronosticos.open{display:flex;animation:fi .2s ease}
+.pron-chip{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.03);border:1px solid var(--b);border-radius:20px;padding:6px 14px;font-size:13px}
+.pron-chip.hit{border-color:var(--v);background:rgba(0,200,83,.08)}.pron-chip.miss{border-color:var(--r);background:rgba(255,61,61,.06)}
+.chip-nombre{font-weight:600}.chip-pred{color:var(--m);font-size:12px}
+.persona-select-wrap{margin-bottom:32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.persona-select-wrap label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--m)}
+select{background:var(--card);border:1px solid var(--b);color:var(--t);font-family:"DM Sans",sans-serif;font-size:15px;font-weight:600;padding:10px 36px 10px 18px;border-radius:4px;cursor:pointer;outline:none;appearance:none}
+select:focus{border-color:var(--v)}
+.persona-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
+.stat-box{background:var(--card);border:1px solid var(--b);border-radius:4px;padding:24px;text-align:center}
+.stat-num{font-family:"Bebas Neue",sans-serif;font-size:56px;line-height:1;color:var(--v)}
+.stat-box:nth-child(2) .stat-num{color:var(--y)}.stat-box:nth-child(3) .stat-num{color:var(--t)}
+.stat-lbl{font-size:11px;color:var(--m);letter-spacing:2px;text-transform:uppercase;margin-top:6px}
+.detalle-list{display:flex;flex-direction:column;gap:8px}
+.detalle-row{display:grid;grid-template-columns:100px 1fr 1fr 1fr 36px;align-items:center;gap:12px;background:var(--card);border:1px solid var(--b);border-radius:4px;padding:14px 20px;font-size:13px}
+.detalle-row.hit{border-left:3px solid var(--v)}.detalle-row.miss{border-left:3px solid var(--r)}
+.detalle-fecha{color:var(--m);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.detalle-partido{font-weight:600}.detalle-pred{color:var(--m)}.detalle-real{font-weight:600}.detalle-icon{text-align:center;font-size:16px}
+.detalle-header{display:grid;grid-template-columns:100px 1fr 1fr 1fr 36px;gap:12px;padding:8px 20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--m);margin-bottom:4px}
+@media(max-width:640px){
+  header{padding:40px 20px 24px}main{padding:24px 20px 60px}.tabs{padding:0 20px}
+  .rank-card{grid-template-columns:36px 1fr}.rank-stat{display:none}
+  .detalle-row{grid-template-columns:1fr 1fr 30px}.detalle-fecha,.detalle-pred{display:none}.stat-num{font-size:36px}
+}</style></head><body><header><div class="hi"><div class="badge">Quiniela GIZ</div><h1>MUNDIAL<br><span>2026</span></h1><p class="sub">Pronosticos &middot; Resultados &middot; Ranking &mdash; Actualizado: 01/06/2026 19:44</p></div></header><div class="tabs"><button class="tab active" onclick="switchTab('ranking',this)">&#127942; Ranking</button><button class="tab" onclick="switchTab('partidos',this)">&#9917; Partidos</button><button class="tab" onclick="switchTab('persona',this)">&#128100; Por Persona</button></div><main><div class="panel active" id="panel-ranking"><div class="ranking-grid" id="ranking-container"></div></div><div class="panel" id="panel-partidos"><div id="partidos-container"></div></div><div class="panel" id="panel-persona"><div class="persona-select-wrap"><label>Ver pronosticos de</label><select id="persona-select" onchange="renderPersona()"></select></div><div class="persona-stats"><div class="stat-box"><div class="stat-num" id="p-aciertos">-</div><div class="stat-lbl">Aciertos</div></div><div class="stat-box"><div class="stat-num" id="p-pct">-</div><div class="stat-lbl">Efectividad</div></div><div class="stat-box"><div class="stat-num" id="p-partidos">-</div><div class="stat-lbl">Partidos</div></div></div><div class="detalle-header"><span>Fecha</span><span>Partido</span><span>Pronostico</span><span>Resultado Real</span><span></span></div><div class="detalle-list" id="detalle-container"></div></div></main><script>const RES=[{"fecha":"11 de Junio ","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur","fuente":"simulado"},{"fecha":"11 de Junio ","partido":"México vs Sudáfrica","resultado":"México","fuente":"simulado"},{"fecha":"12 de Junio ","partido":"Canadá vs Bosnia y Herzegovina","resultado":"Canadá","fuente":"simulado"},{"fecha":"12 de Junio ","partido":"USA vs Paraguay","resultado":"Empate","fuente":"simulado"},{"fecha":"13 de Junio ","partido":"Australia vs Türkiye","resultado":"Australia","fuente":"simulado"},{"fecha":"13 de Junio ","partido":"Brasil vs Marruecos","resultado":"Marruecos","fuente":"simulado"},{"fecha":"13 de Junio ","partido":"Haití vs Escocia","resultado":"Escocia","fuente":"simulado"},{"fecha":"13 de Junio ","partido":"Qatar vs Suiza","resultado":"Qatar","fuente":"simulado"}];const PRON=[{"fecha":"11 de Junio ","nombre":"Danhy","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur"},{"fecha":"11 de Junio ","nombre":"Eli","partido":"Corea del Sur vs República Checa","resultado":"Empate"},{"fecha":"11 de Junio ","nombre":"Karla","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur"},{"fecha":"11 de Junio ","nombre":"Red Bull","partido":"Corea del Sur vs República Checa","resultado":"Empate"},{"fecha":"11 de Junio ","nombre":"Danhy","partido":"México vs Sudáfrica","resultado":"Empate"},{"fecha":"11 de Junio ","nombre":"Eli","partido":"México vs Sudáfrica","resultado":"México"},{"fecha":"11 de Junio ","nombre":"Karla","partido":"México vs Sudáfrica","resultado":"Empate"},{"fecha":"11 de Junio ","nombre":"Red Bull","partido":"México vs Sudáfrica","resultado":"México"},{"fecha":"12 de Junio ","nombre":"Karla","partido":"Canadá vs Bosnia y Herzegovina","resultado":"Canadá"},{"fecha":"12 de Junio ","nombre":"Nely","partido":"Canadá vs Bosnia y Herzegovina","resultado":"Empate"},{"fecha":"12 de Junio ","nombre":"Red Bull","partido":"Canadá vs Bosnia y Herzegovina","resultado":"Empate"},{"fecha":"12 de Junio ","nombre":"Tessa","partido":"Canadá vs Bosnia y Herzegovina","resultado":"Canadá"},{"fecha":"12 de Junio ","nombre":"Karla","partido":"USA vs Paraguay","resultado":"USA"},{"fecha":"12 de Junio ","nombre":"Nely","partido":"USA vs Paraguay","resultado":"USA"},{"fecha":"12 de Junio ","nombre":"Red Bull","partido":"USA vs Paraguay","resultado":"USA"},{"fecha":"12 de Junio ","nombre":"Tessa","partido":"USA vs Paraguay","resultado":"USA"},{"fecha":"13 de Junio ","nombre":"Eli","partido":"Australia vs Türkiye","resultado":"Türkiye"},{"fecha":"13 de Junio ","nombre":"Karla","partido":"Australia vs Türkiye","resultado":"Australia"},{"fecha":"13 de Junio ","nombre":"Obed","partido":"Australia vs Türkiye","resultado":"Empate"},{"fecha":"13 de Junio ","nombre":"Tessa","partido":"Australia vs Türkiye","resultado":"Australia"},{"fecha":"13 de Junio ","nombre":"Eli","partido":"Brasil vs Marruecos","resultado":"Marruecos"},{"fecha":"13 de Junio ","nombre":"Karla","partido":"Brasil vs Marruecos","resultado":"Empate"},{"fecha":"13 de Junio ","nombre":"Obed","partido":"Brasil vs Marruecos","resultado":"Marruecos"},{"fecha":"13 de Junio ","nombre":"Tessa","partido":"Brasil vs Marruecos","resultado":"Empate"},{"fecha":"13 de Junio ","nombre":"Eli","partido":"Haití vs Escocia","resultado":"Haití"},{"fecha":"13 de Junio ","nombre":"Karla","partido":"Haití vs Escocia","resultado":"Haití"},{"fecha":"13 de Junio ","nombre":"Obed","partido":"Haití vs Escocia","resultado":"Haití"},{"fecha":"13 de Junio ","nombre":"Tessa","partido":"Haití vs Escocia","resultado":"Empate"},{"fecha":"13 de Junio ","nombre":"Eli","partido":"Qatar vs Suiza","resultado":"Empate"},{"fecha":"13 de Junio ","nombre":"Karla","partido":"Qatar vs Suiza","resultado":"Qatar"},{"fecha":"13 de Junio ","nombre":"Obed","partido":"Qatar vs Suiza","resultado":"Qatar"},{"fecha":"13 de Junio ","nombre":"Tessa","partido":"Qatar vs Suiza","resultado":"Qatar"}];const FMAP=[{"fecha":"11 de Junio ","label":"11 de Junio "},{"fecha":"12 de Junio ","label":"12 de Junio "},{"fecha":"13 de Junio ","label":"13 de Junio "}];
+function resReal(f,p){return RES.find(r=>r.fecha===f&&r.partido===p)||null;}
+function hit(p){var r=resReal(p.fecha,p.partido);return r&&r.resultado===p.resultado;}
+function lbl(f){var x=FMAP.find(m=>m.fecha===f);return x?x.label:f;}
+
+function renderRanking(){
+  var ns=[...new Set(PRON.map(function(p){return p.nombre;}))];
+  var data=ns.map(function(n){
+    var ps=PRON.filter(function(p){return p.nombre===n;});
+    var ac=ps.filter(hit).length;
+    return{n:n,ac:ac,tot:ps.length,pct:Math.round(ac/ps.length*100)};
+  }).sort(function(a,b){return b.ac-a.ac||b.pct-a.pct;});
+  var maxA=data[0]?data[0].ac:1;
+  var medals=["gold","silver","bronze"];
+  var html=data.map(function(r,i){
+    return "<div class=\"rank-card "+(medals[i]||"")+"\">"+
+      "<div class=\"rank-pos\">"+(i+1)+"</div>"+
+      "<div><div class=\"rank-name\">"+r.n+"</div>"+
+      "<div class=\"rank-bar-wrap\"><div class=\"rank-bar\" data-w=\""+Math.round(r.ac/maxA*100)+"\"></div></div>"+
+      "<div class=\"rank-partidos\">"+r.tot+" partidos pronosticados</div></div>"+
+      "<div class=\"rank-stat\"><div class=\"rank-aciertos\">"+r.ac+"</div>"+
+      "<div class=\"rank-pct\">"+r.pct+"% efectividad</div></div></div>";
+  }).join("");
+  document.getElementById("ranking-container").innerHTML=html;
+  setTimeout(function(){
+    document.querySelectorAll(".rank-bar").forEach(function(b){b.style.width=b.dataset.w+"%";});
+  },80);
+}
+
+function renderPartidos(){
+  var fechas=[...new Set(RES.map(function(r){return r.fecha;}))];
+  var html=fechas.map(function(fecha){
+    var ps=RES.filter(function(r){return r.fecha===fecha;});
+    var inner=ps.map(function(r,ri){
+      var pts=r.partido.split(" vs ");
+      var prons=PRON.filter(function(p){return p.fecha===fecha&&p.partido===r.partido;});
+      var id="pid"+fecha.replace(/[^a-z0-9]/g,"")+ri;
+      var icon=r.fuente==="simulado"?"&#127922;":"&#9989;";
+      var chips=prons.map(function(p){
+        var h=hit(p);
+        return "<div class=\"pron-chip "+(h?"hit":"miss")+"\">"+(h?"&#10003;":"&#10007;")+" <span class=\"chip-nombre\">"+p.nombre+"</span> <span class=\"chip-pred\">&#8594; "+p.resultado+"</span></div>";
+      }).join("");
+      return "<div class=\"partido-card\">"+
+        "<div class=\"partido-header\" onclick=\"tog('"+id+"')\">"+
+        "<div class=\"team\">"+(pts[0]||"")+"</div>"+
+        "<div class=\"vs-box\"><div class=\"vs-resultado "+r.fuente+"\">"+icon+" "+r.resultado+"</div></div>"+
+        "<div class=\"team right\">"+(pts[1]||"")+"</div></div>"+
+        "<div class=\"partido-toggle\" onclick=\"tog('"+id+"')\" >Ver "+prons.length+" pronosticos</div>"+
+        "<div class=\"pronosticos\" id=\""+id+"\">"+chips+"</div></div>";
+    }).join("");
+    return "<div class=\"fecha-section\"><div class=\"fecha-label\">"+lbl(fecha)+"</div>"+inner+"</div>";
+  }).join("");
+  document.getElementById("partidos-container").innerHTML=html;
+}
+function tog(id){document.getElementById(id).classList.toggle("open");}
+
+function renderPersonaSelect(){
+  var ns=[...new Set(PRON.map(function(p){return p.nombre;}))].sort();
+  document.getElementById("persona-select").innerHTML=ns.map(function(n){return "<option>"+n+"</option>";}).join("");
+  renderPersona();
+}
+function renderPersona(){
+  var n=document.getElementById("persona-select").value;
+  var ps=PRON.filter(function(p){return p.nombre===n;});
+  var ac=ps.filter(hit).length;
+  document.getElementById("p-aciertos").textContent=ac;
+  document.getElementById("p-pct").textContent=Math.round(ac/ps.length*100)+"%";
+  document.getElementById("p-partidos").textContent=ps.length;
+  var html=ps.map(function(p){
+    var r=resReal(p.fecha,p.partido);
+    var h=hit(p);
+    return "<div class=\"detalle-row "+(h?"hit":"miss")+"\">"+"<span class=\"detalle-fecha\">"+lbl(p.fecha)+"</span>"+"<span class=\"detalle-partido\">"+p.partido+"</span>"+"<span class=\"detalle-pred\">"+p.resultado+"</span>"+"<span class=\"detalle-real\">"+(r?r.resultado:"&#8212;")+"</span>"+"<span class=\"detalle-icon\">"+(h?"&#10003;":"&#10007;")+"</span></div>";
+  }).join("");
+  document.getElementById("detalle-container").innerHTML=html;
+}
+function switchTab(tab,btn){
+  document.querySelectorAll(".tab").forEach(function(t){t.classList.remove("active");});
+  document.querySelectorAll(".panel").forEach(function(p){p.classList.remove("active");});
+  btn.classList.add("active");
+  document.getElementById("panel-"+tab).classList.add("active");
+}
+renderRanking();renderPartidos();renderPersonaSelect();
+</script></body></html>
