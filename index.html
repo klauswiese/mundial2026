@@ -55,54 +55,39 @@ select:focus{border-color:var(--v)}
 .detalle-fecha{color:var(--m);font-size:11px;letter-spacing:1px;text-transform:uppercase}
 .detalle-partido{font-weight:600}.detalle-pred{color:var(--m)}.detalle-real{font-weight:600}.detalle-icon{text-align:center;font-size:16px}
 .detalle-header{display:grid;grid-template-columns:100px 1fr 1fr 1fr 36px;gap:12px;padding:8px 20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--m);margin-bottom:4px}
-.eleg-controls{display:flex;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}
-.eleg-controls label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--m)}
-.elecciones-stats-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;padding:16px;background:var(--card);border:1px solid var(--b);border-radius:4px}
-.ec-mini-stat{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:80px;padding:8px 12px;background:rgba(255,255,255,.03);border:1px solid var(--b);border-radius:4px}
-.ec-mini-nombre{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--m)}
-.ec-mini-num{font-family:"Bebas Neue",sans-serif;font-size:26px;line-height:1;color:var(--v)}
-.ec-mini-pct{font-size:10px;color:var(--m)}
+.eleg-fecha-titulo{font-family:"Bebas Neue",sans-serif;font-size:22px;letter-spacing:3px;color:var(--m);margin-bottom:20px}
+.eleg-fecha-titulo span{color:var(--v)}
 .elecciones-table-wrap{overflow-x:auto;border-radius:4px;border:1px solid var(--b)}
 #elecciones-table{width:100%;border-collapse:collapse;font-size:12px}
 #elecciones-table thead tr{background:rgba(0,200,83,.07);border-bottom:2px solid var(--b)}
-.ec-th-partido{text-align:left;padding:12px 16px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--m);white-space:nowrap;min-width:220px;position:sticky;left:0;background:#0d1510;z-index:2}
-.ec-th-persona{text-align:center;padding:12px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--m);white-space:nowrap;min-width:90px}
-.ec-th-res{text-align:center;padding:12px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--v);white-space:nowrap;min-width:100px}
 #elecciones-table tbody tr{border-bottom:1px solid var(--b);transition:background .15s}
 #elecciones-table tbody tr:hover{background:rgba(255,255,255,.02)}
-.ec-td-partido{padding:10px 16px;position:sticky;left:0;background:var(--card);z-index:1;border-right:1px solid var(--b)}
-#elecciones-table tbody tr:hover .ec-td-partido{background:#161f1a}
-.ec-fecha-badge{display:block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--m);margin-bottom:2px}
-.ec-partido-nombre{font-weight:600;font-size:12px;white-space:nowrap}
-.ec-td{text-align:center;padding:10px 8px;font-size:12px;white-space:nowrap}
+.ec-th-nombre{text-align:left;padding:12px 16px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--m);white-space:nowrap;min-width:140px;position:sticky;left:0;background:#0d1510;z-index:2}
+.ec-th-partido{text-align:center;padding:10px 8px;font-size:11px;color:var(--m);min-width:120px;vertical-align:bottom;border-left:1px solid var(--b)}
+.ec-th-equipos{display:flex;flex-direction:column;align-items:center;gap:2px;font-weight:700;color:var(--t);font-size:11px;line-height:1.3}
+.ec-vs{color:var(--m);font-size:9px;font-weight:400;text-transform:uppercase;letter-spacing:1px}
+.ec-th-res-label{margin-top:6px;font-size:10px;color:var(--v);font-weight:700;text-align:center;padding:3px 6px;background:rgba(0,200,83,.1);border-radius:2px}
+.ec-th-total{text-align:center;padding:12px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--y);min-width:80px;border-left:2px solid var(--b)}
+.ec-td-nombre{padding:12px 16px;font-weight:700;font-size:13px;position:sticky;left:0;background:var(--card);z-index:1;border-right:1px solid var(--b);white-space:nowrap}
+#elecciones-table tbody tr:hover .ec-td-nombre{background:#161f1a}
+.ec-td{text-align:center;padding:10px 8px;font-size:12px;white-space:nowrap;border-left:1px solid var(--b)}
 .ec-hit{color:var(--v);background:rgba(0,200,83,.07);font-weight:700}
 .ec-miss{color:var(--r);background:rgba(255,61,61,.05)}
 .ec-pend{color:var(--m)}
 .ec-nd{color:rgba(90,112,96,.4)}
-.ec-res-real{color:#fff;font-weight:700;background:rgba(0,200,83,.1);border-left:1px solid var(--b)}
+.ec-td-total{text-align:center;padding:10px 8px;border-left:2px solid var(--b)}
+.ec-ac-num{font-family:"Bebas Neue",sans-serif;font-size:22px;color:var(--v)}
+.ec-ac-pct{font-size:11px;color:var(--m)}
 @media(max-width:640px){
   header{padding:40px 20px 24px}main{padding:24px 20px 60px}.tabs{padding:0 20px}
   .rank-card{grid-template-columns:36px 1fr}.rank-stat{display:none}
   .detalle-row{grid-template-columns:1fr 1fr 30px}.detalle-fecha,.detalle-pred{display:none}.stat-num{font-size:36px}
-  .ec-th-persona,.ec-td{min-width:70px}
-}</style></head><body><header><div class="hi"><div class="badge">Grupo de Pronosticos</div><h1>MUNDIAL<br><span>2026</span></h1><p class="sub">Pronosticos &middot; Resultados &middot; Ranking &mdash; Actualizado: 09/06/2026 13:46</p></div></header><div class="tabs"><button class="tab active" onclick="switchTab('ranking',this)">&#127942; Ranking</button><button class="tab" onclick="switchTab('partidos',this)">&#9917; Partidos</button><button class="tab" onclick="switchTab('persona',this)">&#128100; Por Persona</button><button class="tab" onclick="switchTab('elecciones',this)">&#128203; Elecciones</button></div><main><div class="panel active" id="panel-ranking"><div class="ranking-grid" id="ranking-container"></div></div><div class="panel" id="panel-partidos"><div id="partidos-container"></div></div><div class="panel" id="panel-persona"><div class="persona-select-wrap"><label>Ver pronosticos de</label><select id="persona-select" onchange="renderPersona()"></select></div><div class="persona-stats"><div class="stat-box"><div class="stat-num" id="p-aciertos">-</div><div class="stat-lbl">Aciertos</div></div><div class="stat-box"><div class="stat-num" id="p-pct">-</div><div class="stat-lbl">Efectividad</div></div><div class="stat-box"><div class="stat-num" id="p-partidos">-</div><div class="stat-lbl">Partidos</div></div></div><div class="detalle-header"><span>Fecha</span><span>Partido</span><span>Pronostico</span><span>Resultado Real</span><span></span></div><div class="detalle-list" id="detalle-container"></div></div><div class="panel" id="panel-elecciones"><div class="eleg-controls"><label>Filtrar por fecha</label><select id="eleg-fecha-filter" onchange="renderElecciones()"></select></div><div class="elecciones-stats-bar" id="elecciones-stats"></div><div class="elecciones-table-wrap"><table id="elecciones-table"></table></div></div></main><script>const RES=[{"fecha":"11 de Junio","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur","fuente":"simulado"},{"fecha":"11 de Junio","partido":"México vs Sudáfrica","resultado":"México","fuente":"simulado"}];const PRON=[{"fecha":"11 de Junio","nombre":"Abraham","partido":"Corea del Sur vs República Checa","resultado":"Empate","acierto":"0"},{"fecha":"11 de Junio","nombre":"Ale","partido":"Corea del Sur vs República Checa","resultado":"Empate","acierto":"0"},{"fecha":"11 de Junio","nombre":"Bayron","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur","acierto":"1"},{"fecha":"11 de Junio","nombre":"Eli","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur","acierto":"1"},{"fecha":"11 de Junio","nombre":"Johan","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur","acierto":"1"},{"fecha":"11 de Junio","nombre":"Jose","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur","acierto":"1"},{"fecha":"11 de Junio","nombre":"Karen","partido":"Corea del Sur vs República Checa","resultado":"Empate","acierto":"0"},{"fecha":"11 de Junio","nombre":"Klaus","partido":"Corea del Sur vs República Checa","resultado":"Republica Checa","acierto":"0"},{"fecha":"11 de Junio","nombre":"Nely","partido":"Corea del Sur vs República Checa","resultado":"Republica Checa","acierto":"0"},{"fecha":"11 de Junio","nombre":"Abraham","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Ale","partido":"México vs Sudáfrica","resultado":"Sudafrica","acierto":"0"},{"fecha":"11 de Junio","nombre":"Bayron","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Eli","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Johan","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Jose","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Karen","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Klaus","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Nely","partido":"México vs Sudáfrica","resultado":"Sudafrica","acierto":"0"}];const FMAP=[{"fecha":"11 de Junio","label":"11 de Junio"}];
-function norm(s){
-  if(!s)return "";
-  s=s.toLowerCase().trim();
-  s=s.replace(/[�����]/g,"a")
-   .replace(/[����]/g,"e")
-   .replace(/[����]/g,"i")
-   .replace(/[�����]/g,"o")
-   .replace(/[����]/g,"u")
-   .replace(/�/g,"n")
-   .replace(/�/g,"c");
-  return s;
-}
+}</style></head><body><header><div class="hi"><div class="badge">Grupo de Pronosticos</div><h1>MUNDIAL<br><span>2026</span></h1><p class="sub">Pronosticos &middot; Resultados &middot; Ranking &mdash; Actualizado: 09/06/2026 14:25</p></div></header><div class="tabs"><button class="tab active" onclick="switchTab('ranking',this)">&#127942; Ranking</button><button class="tab" onclick="switchTab('partidos',this)">&#9917; Partidos</button><button class="tab" onclick="switchTab('persona',this)">&#128100; Por Persona</button><button class="tab" onclick="switchTab('elecciones',this)">&#128203; Elecciones</button></div><main><div class="panel active" id="panel-ranking"><div class="ranking-grid" id="ranking-container"></div></div><div class="panel" id="panel-partidos"><div id="partidos-container"></div></div><div class="panel" id="panel-persona"><div class="persona-select-wrap"><label>Ver pronosticos de</label><select id="persona-select" onchange="renderPersona()"></select></div><div class="persona-stats"><div class="stat-box"><div class="stat-num" id="p-aciertos">-</div><div class="stat-lbl">Aciertos</div></div><div class="stat-box"><div class="stat-num" id="p-pct">-</div><div class="stat-lbl">Efectividad</div></div><div class="stat-box"><div class="stat-num" id="p-partidos">-</div><div class="stat-lbl">Partidos</div></div></div><div class="detalle-header"><span>Fecha</span><span>Partido</span><span>Pronostico</span><span>Resultado Real</span><span></span></div><div class="detalle-list" id="detalle-container"></div></div><div class="panel" id="panel-elecciones"><div class="eleg-fecha-titulo">Jornada: <span id="eleg-fecha-label"></span></div><div class="elecciones-table-wrap"><table id="elecciones-table"></table></div></div></main><script>const RES=[{"fecha":"11 de Junio","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur","fuente":"simulado"},{"fecha":"11 de Junio","partido":"México vs Sudáfrica","resultado":"México","fuente":"simulado"}];const PRON=[{"fecha":"11 de Junio","nombre":"Abraham","partido":"Corea del Sur vs República Checa","resultado":"Empate","acierto":"0"},{"fecha":"11 de Junio","nombre":"Ale","partido":"Corea del Sur vs República Checa","resultado":"Empate","acierto":"0"},{"fecha":"11 de Junio","nombre":"Bayron","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur","acierto":"1"},{"fecha":"11 de Junio","nombre":"Eli","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur","acierto":"1"},{"fecha":"11 de Junio","nombre":"Johan","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur","acierto":"1"},{"fecha":"11 de Junio","nombre":"Jose","partido":"Corea del Sur vs República Checa","resultado":"Corea del Sur","acierto":"1"},{"fecha":"11 de Junio","nombre":"Karen","partido":"Corea del Sur vs República Checa","resultado":"Empate","acierto":"0"},{"fecha":"11 de Junio","nombre":"Klaus","partido":"Corea del Sur vs República Checa","resultado":"Republica Checa","acierto":"0"},{"fecha":"11 de Junio","nombre":"Nely","partido":"Corea del Sur vs República Checa","resultado":"Republica Checa","acierto":"0"},{"fecha":"11 de Junio","nombre":"Abraham","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Ale","partido":"México vs Sudáfrica","resultado":"Sudafrica","acierto":"0"},{"fecha":"11 de Junio","nombre":"Bayron","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Eli","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Johan","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Jose","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Karen","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Klaus","partido":"México vs Sudáfrica","resultado":"Mexico","acierto":"0"},{"fecha":"11 de Junio","nombre":"Nely","partido":"México vs Sudáfrica","resultado":"Sudafrica","acierto":"0"}];const FMAP=[{"fecha":"11 de Junio","label":"11 de Junio"}];function norm(s){if(!s)return '';s=s.toLowerCase().trim();s=s.replace(/[áàäâã]/g,'a').replace(/[éèëê]/g,'e').replace(/[íìïî]/g,'i').replace(/[óòöôõ]/g,'o').replace(/[úùüû]/g,'u').replace(/ñ/g,'n').replace(/ç/g,'c');return s;}
 function resReal(f,p){return RES.find(r=>r.fecha===f&&norm(r.partido)===norm(p))||null;}
 function hit(p){var r=resReal(p.fecha,p.partido);return r&&norm(r.resultado)===norm(p.resultado);}
 function lbl(f){var x=FMAP.find(m=>m.fecha===f);return x?x.label:f;}
 
-/* ── RANKING ── */
+/* RANKING */
 function renderRanking(){
   var ns=[...new Set(PRON.map(function(p){return p.nombre;}))];
   var data=ns.map(function(n){
@@ -114,13 +99,13 @@ function renderRanking(){
   var maxA=data[0]?data[0].ac:1;
   var medals=["gold","silver","bronze"];
   var html=data.map(function(r,i){
-    return "<div class=\"rank-card "+(medals[i]||"")+"\">"+
-      "<div class=\"rank-pos\">"+(i+1)+"</div>"+
-      "<div><div class=\"rank-name\">"+r.n+"</div>"+
-      "<div class=\"rank-bar-wrap\"><div class=\"rank-bar\" data-w=\""+Math.round(r.ac/maxA*100)+"\"></div></div>"+
-      "<div class=\"rank-partidos\">"+r.tot+" partidos pronosticados</div></div>"+
-      "<div class=\"rank-stat\"><div class=\"rank-aciertos\">"+r.ac+"</div>"+
-      "<div class=\"rank-pct\">"+r.pct+"% efectividad</div></div></div>";
+    return "<div class="rank-card "+(medals[i]||"")+"">"+
+      "<div class="rank-pos">"+(i+1)+"</div>"+
+      "<div><div class="rank-name">"+r.n+"</div>"+
+      "<div class="rank-bar-wrap"><div class="rank-bar" data-w=""+Math.round(r.ac/maxA*100)+""></div></div>"+
+      "<div class="rank-partidos">"+r.tot+" partidos pronosticados</div></div>"+
+      "<div class="rank-stat"><div class="rank-aciertos">"+r.ac+"</div>"+
+      "<div class="rank-pct">"+r.pct+"% efectividad</div></div></div>";
   }).join("");
   document.getElementById("ranking-container").innerHTML=html;
   setTimeout(function(){
@@ -128,7 +113,7 @@ function renderRanking(){
   },80);
 }
 
-/* ── PARTIDOS ── */
+/* PARTIDOS */
 function renderPartidos(){
   var fechas=[...new Set(RES.map(function(r){return r.fecha;}))];
   var html=fechas.map(function(fecha){
@@ -140,23 +125,23 @@ function renderPartidos(){
       var icon=r.fuente==="simulado"?"&#127922;":"&#9989;";
       var chips=prons.map(function(p){
         var h=hit(p);
-        return "<div class=\"pron-chip "+(h?"hit":"miss")+"\">"+(h?"&#10003;":"&#10007;")+" <span class=\"chip-nombre\">"+p.nombre+"</span> <span class=\"chip-pred\">&#8594; "+p.resultado+"</span></div>";
+        return "<div class="pron-chip "+(h?"hit":"miss")+"">"+(h?"&#10003;":"&#10007;")+" <span class="chip-nombre">"+p.nombre+"</span> <span class="chip-pred">&#8594; "+p.resultado+"</span></div>";
       }).join("");
-      return "<div class=\"partido-card\">"+
-        "<div class=\"partido-header\" onclick=\"tog('"+id+"')\">"+
-        "<div class=\"team\">"+(pts[0]||"")+"</div>"+
-        "<div class=\"vs-box\"><div class=\"vs-resultado "+r.fuente+"\">"+icon+" "+r.resultado+"</div></div>"+
-        "<div class=\"team right\">"+(pts[1]||"")+"</div></div>"+
-        "<div class=\"partido-toggle\" onclick=\"tog('"+id+"')\" >Ver "+prons.length+" pronosticos</div>"+
-        "<div class=\"pronosticos\" id=\""+id+"\">"+chips+"</div></div>";
+      return "<div class="partido-card">"+
+        "<div class="partido-header" onclick="tog('"+id+"')">"+
+        "<div class="team">"+(pts[0]||"")+"</div>"+
+        "<div class="vs-box"><div class="vs-resultado "+r.fuente+"">"+icon+" "+r.resultado+"</div></div>"+
+        "<div class="team right">"+(pts[1]||"")+"</div></div>"+
+        "<div class="partido-toggle" onclick="tog('"+id+"')">Ver "+prons.length+" pronosticos</div>"+
+        "<div class="pronosticos" id=""+id+"">"+chips+"</div></div>";
     }).join("");
-    return "<div class=\"fecha-section\"><div class=\"fecha-label\">"+lbl(fecha)+"</div>"+inner+"</div>";
+    return "<div class="fecha-section"><div class="fecha-label">"+lbl(fecha)+"</div>"+inner+"</div>";
   }).join("");
   document.getElementById("partidos-container").innerHTML=html;
 }
 function tog(id){document.getElementById(id).classList.toggle("open");}
 
-/* ── POR PERSONA ── */
+/* POR PERSONA */
 function renderPersonaSelect(){
   var ns=[...new Set(PRON.map(function(p){return p.nombre;}))].sort();
   document.getElementById("persona-select").innerHTML=ns.map(function(n){return "<option>"+n+"</option>";}).join("");
@@ -172,73 +157,68 @@ function renderPersona(){
   var html=ps.map(function(p){
     var r=resReal(p.fecha,p.partido);
     var h=hit(p);
-    return "<div class=\"detalle-row "+(h?"hit":"miss")+"\">"+"<span class=\"detalle-fecha\">"+lbl(p.fecha)+"</span>"+"<span class=\"detalle-partido\">"+p.partido+"</span>"+"<span class=\"detalle-pred\">"+p.resultado+"</span>"+"<span class=\"detalle-real\">"+(r?r.resultado:"&#8212;")+"</span>"+"<span class=\"detalle-icon\">"+(h?"&#10003;":"&#10007;")+"</span></div>";
+    return "<div class="detalle-row "+(h?"hit":"miss")+"">"+
+      "<span class="detalle-fecha">"+lbl(p.fecha)+"</span>"+
+      "<span class="detalle-partido">"+p.partido+"</span>"+
+      "<span class="detalle-pred">"+p.resultado+"</span>"+
+      "<span class="detalle-real">"+(r?r.resultado:"&mdash;")+"</span>"+
+      "<span class="detalle-icon">"+(h?"&#10003;":"&#10007;")+"</span></div>";
   }).join("");
   document.getElementById("detalle-container").innerHTML=html;
 }
 
-/* ── ELECCIONES ── */
+/* ELECCIONES — ultima fecha, filas=participantes, columnas=partidos */
 function renderElecciones(){
-  var partidos=[...new Set(PRON.map(function(p){return p.fecha+"|||"+p.partido;}))];
-  partidos.sort(function(a,b){
-    var fa=a.split("|||")[0], fb=b.split("|||")[0];
-    if(fa!==fb)return fa.localeCompare(fb);
-    return a.split("|||")[1].localeCompare(b.split("|||")[1]);
-  });
-  var nombres=[...new Set(PRON.map(function(p){return p.nombre;}))].sort();
-  var filtroFecha=document.getElementById("eleg-fecha-filter").value;
-  var thead="<thead><tr><th class=\"ec-th-partido\">Partido</th>"+
-    nombres.map(function(n){return "<th class=\"ec-th-persona\">"+n+"</th>";}).join("")+
-    "<th class=\"ec-th-res\">Resultado</th></tr></thead>";
-  var fechasUnicas=[...new Set(partidos.map(function(x){return x.split("|||")[0];}))];
-  if(filtroFecha!=="all") fechasUnicas=fechasUnicas.filter(function(f){return f===filtroFecha;});
-  var tbody="<tbody>"+fechasUnicas.map(function(fecha){
-    var psFecha=partidos.filter(function(x){return x.split("|||")[0]===fecha;});
-    var rows=psFecha.map(function(pk){
-      var pname=pk.split("|||")[1];
-      var res=resReal(fecha,pname);
-      var celdas=nombres.map(function(n){
-        var entry=PRON.find(function(p){return p.fecha===fecha&&norm(p.partido)===norm(pname)&&p.nombre===n;});
-        if(!entry) return "<td class=\"ec-td ec-nd\">—</td>";
-        var h=hit(entry);
-        var cls=res?(h?"ec-hit":"ec-miss"):"ec-pend";
-        return "<td class=\"ec-td "+cls+"\">"+entry.resultado+"</td>";
-      }).join("");
-      var resHTML=res
-        ?"<td class=\"ec-td ec-res-real\">"+(res.fuente==="simulado"?"&#127922;":"&#9989;")+" "+res.resultado+"</td>"
-        :"<td class=\"ec-td ec-pend\">&#8212;</td>";
-      return "<tr><td class=\"ec-td-partido\">"+
-        "<span class=\"ec-fecha-badge\">"+lbl(fecha)+"</span>"+
-        "<span class=\"ec-partido-nombre\">"+pname+"</span></td>"+
-        celdas+resHTML+"</tr>";
-    }).join("");
-    return rows;
-  }).join("")+"</tbody>";
-  document.getElementById("elecciones-table").innerHTML=thead+tbody;
-  renderEleccionesStats(nombres);
-}
-function renderEleccionesStats(nombres){
-  var html=nombres.map(function(n){
-    var ps=PRON.filter(function(p){return p.nombre===n;});
-    var resueltos=ps.filter(function(p){return resReal(p.fecha,p.partido)!==null;});
-    var ac=resueltos.filter(hit).length;
-    var pct=resueltos.length>0?Math.round(ac/resueltos.length*100):0;
-    return "<div class=\"ec-mini-stat\">"+
-      "<span class=\"ec-mini-nombre\">"+n+"</span>"+
-      "<span class=\"ec-mini-num\">"+ac+"/"+resueltos.length+"</span>"+
-      "<span class=\"ec-mini-pct\">"+pct+"%</span>"+
-      "</div>";
-  }).join("");
-  document.getElementById("elecciones-stats").innerHTML=html;
-}
-function initEleccionesFilter(){
   var fechas=[...new Set(PRON.map(function(p){return p.fecha;}))].sort();
-  var opts="<option value=\"all\">Todas las fechas</option>"+
-    fechas.map(function(f){return "<option value=\""+f+"\">"+lbl(f)+"</option>";}).join("");
-  document.getElementById("eleg-fecha-filter").innerHTML=opts;
+  var ultima=fechas[fechas.length-1];
+  var partidos=[...new Set(
+    PRON.filter(function(p){return p.fecha===ultima;}).map(function(p){return p.partido;})
+  )].sort();
+  var nombres=[...new Set(PRON.map(function(p){return p.nombre;}))].sort();
+
+  // Subtitulo con la fecha
+  document.getElementById("eleg-fecha-label").textContent=lbl(ultima);
+
+  // Cabecera: primera col = participante, luego una col por partido, ultima = total
+  var thead="<thead><tr>"+
+    "<th class="ec-th-nombre">Participante</th>"+
+    partidos.map(function(p){
+      var res=resReal(ultima,p);
+      var pts=p.split(" vs ");
+      var resLabel=res?"<div class="ec-th-res-label">"+(res.fuente==="simulado"?"&#127922;":"&#9989;")+" "+res.resultado+"</div>":"";
+      return "<th class="ec-th-partido">"+
+        "<div class="ec-th-equipos"><span>"+(pts[0]||p)+"</span><span class="ec-vs">vs</span><span>"+(pts[1]||"")+"</span></div>"+
+        resLabel+"</th>";
+    }).join("")+
+    "<th class="ec-th-total">Aciertos</th>"+
+    "</tr></thead>";
+
+  // Filas: una por participante
+  var tbody="<tbody>"+nombres.map(function(n){
+    var ac=0;
+    var celdas=partidos.map(function(p){
+      var entry=PRON.find(function(x){return x.fecha===ultima&&norm(x.partido)===norm(p)&&x.nombre===n;});
+      if(!entry) return "<td class="ec-td ec-nd">&mdash;</td>";
+      var res=resReal(ultima,p);
+      var h=hit(entry);
+      if(h) ac++;
+      var cls=res?(h?"ec-hit":"ec-miss"):"ec-pend";
+      return "<td class="ec-td "+cls+"">"+entry.resultado+"</td>";
+    }).join("");
+    var tot=partidos.filter(function(p){
+      return resReal(ultima,p)!==null;
+    }).length;
+    var pct=tot>0?Math.round(ac/tot*100):0;
+    return "<tr>"+
+      "<td class="ec-td-nombre">"+n+"</td>"+
+      celdas+
+      "<td class="ec-td-total"><span class="ec-ac-num">"+ac+"</span><span class="ec-ac-pct"> "+pct+"%</span></td>"+
+      "</tr>";
+  }).join("")+"</tbody>";
+
+  document.getElementById("elecciones-table").innerHTML=thead+tbody;
 }
 
-/* ── NAV ── */
 function switchTab(tab,btn){
   document.querySelectorAll(".tab").forEach(function(t){t.classList.remove("active");});
   document.querySelectorAll(".panel").forEach(function(p){p.classList.remove("active");});
@@ -246,10 +226,8 @@ function switchTab(tab,btn){
   document.getElementById("panel-"+tab).classList.add("active");
   if(tab==="elecciones") renderElecciones();
 }
-
-/* ── INIT ── */
 renderRanking();
 renderPartidos();
 renderPersonaSelect();
-initEleccionesFilter();
+renderElecciones();
 </script></body></html>
